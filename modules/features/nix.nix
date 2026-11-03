@@ -55,6 +55,7 @@
       boot.loader.systemd-boot.configurationLimit = 10;
 
       # nixpkgs configs
+      nixpkgs.config.problems.handlers."gtk+".broken = "warn";
 
       nixpkgs.config = {
         allowUnfree = true;
