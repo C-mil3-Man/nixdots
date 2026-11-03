@@ -1,0 +1,50 @@
+# Noctalia v5 settings. Syntax is exactly what docs.noctalia.dev shows,
+# so you can paste examples from the docs straight in here.
+# Anything you change in the GUI goes to ~/.local/state/noctalia/settings.toml
+# and overrides this file. Delete that file to go back to this config.
+
+[theme]
+mode = "dark"
+source = "builtin"
+builtin = "Gruvbox"           # unverified name, see docs.noctalia.dev/noctalia/theming/
+
+[theme.templates]
+# ids copied from a working v5 config; check the Template Reference for gtk/qt/discord/steam/etc.
+builtin_ids = ["btop", "kitty"]
+community_ids = ["yazi", "zathura"]
+
+[bar.default]
+position = "left"
+thickness = 34
+background_opacity = 0.93
+start = ["control-center", "wallpaper", "workspaces", "sysmon"]
+center = ["clock"]
+end = ["screenshot", "notifications", "power_profile", "volume", "bluetooth", "battery", "keyboard_layout", "tray"]
+
+[widget.clock]
+color = "tertiary"
+
+[widget.workspaces]
+label_source = "name"
+pill_scale = 0.6
+
+[wallpaper]
+directory = "/home/crux/nixdots/wallpapers"
+
+[location]
+auto_locate = true
+
+[shell]
+font_family = "JetBrains Mono"
+
+[shell.launcher]
+sort_by_usage = true
+
+[notification]
+layer = "overlay"
+
+[audio]
+enable_sounds = false
+
+[lockscreen]
+blur_intensity = 0.65
