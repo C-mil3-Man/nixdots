@@ -26,6 +26,12 @@
       environment.systemPackages = with pkgs; [
         steam-run
         usbutils
+
+        #For WoW/Battlenet
+        lutris
+        protonup-qt
+        winetricks
+        vulkan-tools
       ];
     };
 }
