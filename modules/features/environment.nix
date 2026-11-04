@@ -29,13 +29,11 @@
           self'.packages.openv
           pkgs.manix
           pkgs.nix-inspect
-          pkgs.zoxide
           pkgs.libnotify
           pkgs.file
           pkgs.unzip
           pkgs.zip
           pkgs.p7zip
-          pkgs.wget
           pkgs.killall
           pkgs.sshfs
           pkgs.fzf
@@ -48,7 +46,6 @@
           pkgs.bat
           pkgs.awscli2
           self'.packages.git
-          self'.packages.lf
           self'.packages.yazi
           self'.packages.btop
           self'.packages.neovim-nvf

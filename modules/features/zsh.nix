@@ -82,11 +82,6 @@
           rm -f -- "$tmp"
         }
 
-        # lf wrapper: cd into last directory on exit
-        function lf() {
-          cd "$(command lf -print-last-dir "$@")"
-        }
-
         # --- Aliases ---
         alias ls="eza --group-directories-first"
         alias cat="bat --style=plain --pager=never"
