@@ -18,9 +18,8 @@
         # --- Modular System Profiles ---
         self.nixosModules.desktop
         self.nixosModules.nix
-        self.nixosModules.core # Pulls in all the services we just migrated
+        self.nixosModules.core
         self.nixosModules.base
-
         self.nixosModules.gaming
         self.nixosModules.power
 
@@ -28,14 +27,12 @@
         self.nixosModules.noctalia
         self.nixosModules.ansibleopenstack
         self.nixosModules.opentofu
-        #self.nixosModules.vscodium
       ];
 
       # --- Environment & System Packages ---
       environment.systemPackages = with pkgs; [
         # Utilities
         vim
-        wget
         age
         ripgrep
         jq
@@ -55,14 +52,10 @@
 
         # Applications
         teams-for-linux
-        kitty
-        firefox
         mpv
         vesktop
         image-roll
 
-        # gaming
-        # dusklight  # broken with GCC 15 (std::memcpy resolution), re-enable when nixpkgs fixes it
       ];
 
       # --- User Configuration ---
@@ -70,7 +63,7 @@
 
       users.users."${config.preferences.user.name}" = {
         isNormalUser = true;
-        description = "${config.preferences.user.name}, he is the primary user";
+        description = config.preferences.user.name;
         extraGroups = [
           "networkmanager"
           "wheel"

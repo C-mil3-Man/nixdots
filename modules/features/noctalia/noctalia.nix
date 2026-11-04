@@ -16,11 +16,8 @@
         "L+ /home/crux/.config/noctalia/config.toml - - - - ${./noctalia.toml}"
       ];
 
-      # needed for Noctalia's wifi, bluetooth, power-profile and battery features
-      networking.networkmanager.enable = true;
-      hardware.bluetooth.enable = true;
-      services.power-profiles-daemon.enable = true;
-      services.upower.enable = true;
+      # Noctalia's wifi, bluetooth, power-profile and battery features rely on
+      # NetworkManager, bluez, power-profiles-daemon and upower (see core.nix).
 
       nix.settings = {
         extra-substituters = [ "https://noctalia.cachix.org" ];
