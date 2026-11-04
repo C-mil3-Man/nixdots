@@ -3,7 +3,7 @@
     packages.btop = inputs.wrapper-modules.wrappers.btop.wrap {
       inherit pkgs;
       settings = {
-        color_theme = "gruvbox";
+        color_theme = "gruvbox_dark";
         theme_background = true;
         truecolor = true;
         vim_keys = true;
