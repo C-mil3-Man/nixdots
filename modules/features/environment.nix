@@ -20,10 +20,10 @@
         '';
       };
 
-      packages.shell-environment = inputs.wrappers.lib.wrapPackage {
+      packages.shell-environment = inputs.wrapper-modules.lib.wrapPackage {
         inherit pkgs;
         package = self'.packages.zsh;
-        runtimeInputs = [
+        runtimePkgs = map (p: { data = p; prefix = true; }) [
           self'.packages.nh
           self'.packages.ns
           self'.packages.openv
@@ -50,6 +50,8 @@
           self'.packages.btop
           self'.packages.neovim-nvf
         ];
+        # required so it can be used as a login shell (users.users.<name>.shell)
+        passthru.shellPath = "/bin/zsh";
         env = {
           EDITOR = lib.getExe self'.packages.neovim-nvf;
           NIXOS_OZONE_WL = "1";
