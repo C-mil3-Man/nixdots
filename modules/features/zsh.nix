@@ -85,8 +85,6 @@
         # --- Aliases ---
         alias ls="eza --group-directories-first"
         alias cat="bat --style=plain --pager=never"
-        alias ap="ansible-playbook"
-        alias os="openstack"
 
         # Git
         alias gcmsg="git commit -m"
@@ -97,10 +95,7 @@
         # --- Tool Initializations ---
         source ${zoxideInit}
         source ${carapaceInit}
-        # Disable zsh's built-in ansible-playbook completion so carapace takes over
-        compdef -d ansible-playbook
         source ${starshipInit}
-        source ${./openstack.zsh}
         eval "$(${lib.getExe pkgs.atuin} init zsh)"
         if command -v direnv &>/dev/null; then
           eval "$(direnv hook zsh)"

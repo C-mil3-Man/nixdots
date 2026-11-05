@@ -11,8 +11,6 @@
             jnoortheen.nix-ide
             mkhl.direnv
             redhat.vscode-yaml
-            redhat.ansible
-            hashicorp.terraform
             timonwong.shellcheck
           ];
         })

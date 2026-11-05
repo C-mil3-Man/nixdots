@@ -26,7 +26,6 @@
         runtimePkgs = map (p: { data = p; prefix = true; }) [
           self'.packages.nh
           self'.packages.ns
-          self'.packages.openv
           pkgs.manix
           pkgs.nix-inspect
           pkgs.libnotify

@@ -25,8 +25,6 @@
 
         # --- Shells & Ecosystem Environments ---
         self.nixosModules.noctalia
-        self.nixosModules.ansibleopenstack
-        self.nixosModules.opentofu
       ];
 
       # --- Environment & System Packages ---
@@ -41,9 +39,7 @@
         networkmanagerapplet
         nautilus
 
-        # Deployment & Secrets
-        sops
-        colmena
+        # Tools
         claude-code
 
         # Formatters
@@ -51,7 +47,6 @@
         black
 
         # Applications
-        teams-for-linux
         mpv
         vesktop
         image-roll
@@ -77,9 +72,6 @@
 
       # --- Networking & Localization ---
       networking.hostName = "t14s-machine";
-      networking.networkmanager.plugins = with pkgs; [
-        networkmanager-openconnect
-      ];
 
       time.timeZone = "Europe/Stockholm";
 
