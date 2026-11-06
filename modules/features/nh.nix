@@ -1,5 +1,5 @@
-{inputs, ...}: {
-  perSystem = {pkgs, ...}: {
+{ inputs, ... }: {
+  perSystem = { pkgs, ... }: {
     packages.nh = inputs.wrapper-modules.lib.wrapPackage {
       inherit pkgs;
       package = pkgs.nh;

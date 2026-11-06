@@ -1,7 +1,11 @@
 { inputs, ... }:
 {
   flake.nixosModules.noctalia =
-    { pkgs, ... }:
+    { pkgs, config, ... }:
+    let
+      user = config.preferences.user.name;
+      inherit (config.users.users.${user}) home group;
+    in
     {
       # Noctalia v5 from its own flake (cachix cache applies)
       environment.systemPackages = [
@@ -12,8 +16,8 @@
       # every *.toml in ~/.config/noctalia/. GUI changes land in
       # ~/.local/state/noctalia/settings.toml and override this file.
       systemd.tmpfiles.rules = [
-        "d /home/crux/.config/noctalia 0755 crux users -"
-        "L+ /home/crux/.config/noctalia/config.toml - - - - ${./noctalia.toml}"
+        "d ${home}/.config/noctalia 0755 ${user} ${group} -"
+        "L+ ${home}/.config/noctalia/config.toml - - - - ${./noctalia.toml}"
       ];
 
       # Noctalia's wifi, bluetooth, power-profile and battery features rely on

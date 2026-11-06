@@ -63,45 +63,51 @@
         };
 
         # All preferences below are locked
-        Preferences = lib.mapAttrs (_: Value: { inherit Value; Status = "locked"; }) {
-          "browser.startup.page" = 3;
-          "browser.startup.homepage_override.mstone" = "ignore";
-          "trailhead.firstrun.didSeeAboutWelcome" = true;
-          "browser.disableResetPrompt" = true;
-          "browser.uitour.enabled" = false;
-          "browser.zoom.siteSpecific" = true;
-          "browser.tabs.firefox-view" = false;
-          "browser.download.useDownloadDir" = false;
-          "privacy.trackingprotection.enabled" = true;
-          "dom.security.https_only_mode" = true;
-          "privacy.clearOnShutdown.cookies" = false;
-          "privacy.clearOnShutdown.siteSettings" = false;
-          "privacy.sanitize.sanitizeOnShutdown" = false;
-          "signon.rememberSignons" = false;
-          "passwordmanager.enabled" = false;
-          "extensions.formautofill.address.enabled" = false;
-          "extensions.formautofill.creditCards.enabled" = false;
-          "browser.urlbar.autoFill" = true;
-          "browser.urlbar.dnsFirstForSingleWords" = true;
-          "browser.urlbar.suggest.history" = true;
-          "browser.urlbar.suggest.bookmark" = true;
-          "browser.urlbar.suggest.openpage" = true;
-          "browser.urlbar.suggest.searches" = false;
-          "browser.search.suggest.enabled" = true;
-          "browser.newtabpage.activity-stream.showSponsored" = false;
-          "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
-          "browser.urlbar.suggest.quicksuggest.sponsored" = false;
-          "browser.newtabpage.activity-stream.feeds.system.topstories" = false;
-          "browser.newtabpage.activity-stream.feeds.topsites" = false;
-          "browser.newtabpage.activity-stream.section.highlights.includeVisited" = false;
-          "browser.newtabpage.activity-stream.section.highlights.includeBookmarks" = false;
-          "app.shield.optoutstudies.enabled" = false;
-          "browser.discovery.enabled" = false;
-          "toolkit.telemetry.enabled" = false;
-          "datareporting.healthreport.service.enabled" = false;
-          "datareporting.healthreport.uploadEnabled" = false;
-          "toolkit.telemetry.archive.enabled" = false;
-        };
+        Preferences =
+          lib.mapAttrs
+            (_: Value: {
+              inherit Value;
+              Status = "locked";
+            })
+            {
+              "browser.startup.page" = 3;
+              "browser.startup.homepage_override.mstone" = "ignore";
+              "trailhead.firstrun.didSeeAboutWelcome" = true;
+              "browser.disableResetPrompt" = true;
+              "browser.uitour.enabled" = false;
+              "browser.zoom.siteSpecific" = true;
+              "browser.tabs.firefox-view" = false;
+              "browser.download.useDownloadDir" = false;
+              "privacy.trackingprotection.enabled" = true;
+              "dom.security.https_only_mode" = true;
+              "privacy.clearOnShutdown.cookies" = false;
+              "privacy.clearOnShutdown.siteSettings" = false;
+              "privacy.sanitize.sanitizeOnShutdown" = false;
+              "signon.rememberSignons" = false;
+              "passwordmanager.enabled" = false;
+              "extensions.formautofill.address.enabled" = false;
+              "extensions.formautofill.creditCards.enabled" = false;
+              "browser.urlbar.autoFill" = true;
+              "browser.urlbar.dnsFirstForSingleWords" = true;
+              "browser.urlbar.suggest.history" = true;
+              "browser.urlbar.suggest.bookmark" = true;
+              "browser.urlbar.suggest.openpage" = true;
+              "browser.urlbar.suggest.searches" = false;
+              "browser.search.suggest.enabled" = true;
+              "browser.newtabpage.activity-stream.showSponsored" = false;
+              "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
+              "browser.urlbar.suggest.quicksuggest.sponsored" = false;
+              "browser.newtabpage.activity-stream.feeds.system.topstories" = false;
+              "browser.newtabpage.activity-stream.feeds.topsites" = false;
+              "browser.newtabpage.activity-stream.section.highlights.includeVisited" = false;
+              "browser.newtabpage.activity-stream.section.highlights.includeBookmarks" = false;
+              "app.shield.optoutstudies.enabled" = false;
+              "browser.discovery.enabled" = false;
+              "toolkit.telemetry.enabled" = false;
+              "datareporting.healthreport.service.enabled" = false;
+              "datareporting.healthreport.uploadEnabled" = false;
+              "toolkit.telemetry.archive.enabled" = false;
+            };
       };
     };
   };

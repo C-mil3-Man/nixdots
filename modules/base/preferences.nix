@@ -1,7 +1,7 @@
-# modules/base/base.nix
+# modules/base/preferences.nix
 { ... }:
 {
-  flake.nixosModules.base =
+  flake.nixosModules.preferences =
     { lib, ... }:
     {
       options.preferences.user.name = lib.mkOption {

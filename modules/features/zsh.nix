@@ -122,13 +122,19 @@
       packages.zsh = inputs.wrapper-modules.lib.wrapPackage {
         inherit pkgs;
         package = pkgs.zsh;
-        runtimePkgs = map (p: { data = p; prefix = true; }) [
-          pkgs.atuin
-          pkgs.zoxide
-          pkgs.carapace
-          pkgs.starship
-          pkgs.bat
-        ];
+        runtimePkgs =
+          map
+            (p: {
+              data = p;
+              prefix = true;
+            })
+            [
+              pkgs.atuin
+              pkgs.zoxide
+              pkgs.carapace
+              pkgs.starship
+              pkgs.bat
+            ];
         env = {
           ZDOTDIR = zdotdir;
         };

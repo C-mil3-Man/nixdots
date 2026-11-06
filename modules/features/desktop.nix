@@ -14,6 +14,11 @@
         self.nixosModules.fonts
       ];
 
+      environment.systemPackages = with pkgs; [
+        networkmanagerapplet
+        nautilus
+      ];
+
       programs.thunar = {
         enable = true;
         plugins = with pkgs; [

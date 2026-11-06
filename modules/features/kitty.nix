@@ -1,4 +1,9 @@
-{ self, inputs, ... }:
+{
+  self,
+  inputs,
+  lib,
+  ...
+}:
 {
   flake.wrapperModules.kitty =
     { lib, ... }:
@@ -58,8 +63,16 @@
     };
 
   perSystem =
-    { pkgs, ... }:
+    { pkgs, self', ... }:
     {
+      packages.terminal = inputs.wrapper-modules.wrappers.kitty.wrap {
+        inherit pkgs;
+        imports = [ self.wrapperModules.kitty ];
+        extraConfig = ''
+          shell ${lib.getExe self'.packages.shell-environment}
+        '';
+      };
+
       packages.kitty = inputs.wrapper-modules.wrappers.kitty.wrap {
         inherit pkgs;
         imports = [ self.wrapperModules.kitty ];
