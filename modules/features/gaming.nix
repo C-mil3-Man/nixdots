@@ -27,7 +27,13 @@
         usbutils
 
         #For WoW/Battlenet
-        lutris
+        # gnome-desktop dropped RRScreen, which breaks Lutris' display
+        # manager fallback outside GNOME. Without it Lutris uses its legacy one.
+        (lutris.override {
+          lutris-unwrapped = lutris-unwrapped.overrideAttrs (old: {
+            buildInputs = builtins.filter (p: (p.pname or "") != "gnome-desktop") old.buildInputs;
+          });
+        })
         protonup-qt
         winetricks
         vulkan-tools
